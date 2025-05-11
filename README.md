@@ -1,7 +1,4 @@
 
-https://github.com/arqam66/E-Commerce-Platform
-
-
 # 🛍️ E-Commerce Platform (Amazon Clone)
 
 ## 🚀 Features
