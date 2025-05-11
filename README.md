@@ -26,6 +26,6 @@ NEXT_PUBLIC_FIREBASE_API_KEY=your_key
 NEXT_PUBLIC_STRIPE_PK=pk_test_123
 # ...other vars
 📜 License
-MIT © 2024 YourName
+MIT © 2024 arqam hussain
 
 
