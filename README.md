@@ -1,161 +1,73 @@
-```markdown
-# Amazon Clone - Multi-Vendor E-Commerce Platform
+# E-Commerce Platform
 
-![E-Commerce Platform](https://img.shields.io/badge/React-19-blue) 
-![Next.js](https://img.shields.io/badge/Next.js-14-black) 
-![Firebase](https://img.shields.io/badge/Firebase-9-orange) 
-![Stripe](https://img.shields.io/badge/Stripe-API-blueviolet)
-
-A full-featured multi-vendor e-commerce platform with admin dashboard, inspired by Amazon.
+A modern multi-vendor marketplace built with Next.js and Firebase.
 
 ## Features
 
-### Core Functionality
-- **User Authentication** with role-based access (Users/Admins/Vendors)
-- **Product Management** with categories, filters, and search
-- **Shopping Cart** with persistent storage
-- **Checkout Process** with multiple payment options
-- **Order Tracking** with real-time updates
+- **User System**: Customer, vendor, and admin roles
+- **Product Management**: CRUD operations with categories and search
+- **Shopping Experience**: Cart, checkout flow, and Stripe payments
+- **Reviews**: Product rating system
+- **Admin Dashboard**: Comprehensive management interface
+- **Real-time Updates**: Inventory and order tracking
 
-### Engagement Features
-- ⭐ **Reviews & Ratings** system
-- 🔍 **Advanced Product Search** with filters
-- 🔔 **Real-time Notifications**
-- 📊 **Sales Analytics Dashboard**
+## Technologies
 
-### Admin & Vendor Tools
-- 🛒 **Product Management** (CRUD operations)
-- 📦 **Order Management System**
-- 👥 **User & Vendor Management**
-- 📈 **Sales & Revenue Reports**
+- **Frontend**: Next.js 14, React 19, Tailwind CSS
+- **State Management**: Redux Toolkit
+- **Backend Services**: Firebase Authentication, Firestore
+- **Payment Processing**: Stripe API
+- **Hosting**: Vercel
 
-## Technology Stack
+## Quick Start
 
-### Frontend
-- **React 19** with Next.js 14 (App Router)
-- **State Management**: Redux Toolkit with Persist
-- **UI Components**: ShadCN UI + Tailwind CSS
-- **Form Handling**: React Hook Form + Zod validation
-
-### Backend
-- **Authentication**: Firebase Auth
-- **Database**: Firestore (NoSQL) + MongoDB for complex queries
-- **Serverless Functions**: Next.js API Routes
-- **Payments**: Stripe API integration
-
-### DevOps
-- **Hosting**: Vercel (Frontend) + Firebase Hosting
-- **CI/CD**: GitHub Actions
-- **Monitoring**: Sentry for error tracking
-
-## Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/amazon-clone.git
-
-# Navigate to project directory
-cd amazon-clone
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env.local
-
-# Fill in your Firebase and Stripe credentials in .env.local
-
-# Run development server
-npm run dev
-```
-
-## Environment Variables
-
-```env
-NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_bucket.appspot.com
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-
-STRIPE_PUBLISHABLE_KEY=your_stripe_pk
-STRIPE_SECRET_KEY=your_stripe_sk
-NEXT_PUBLIC_STRIPE_WEBHOOK_SECRET=your_webhook_secret
-```
-
-## Project Structure
-
-```
-amazon-clone/
-├── app/                    # Next.js app router
-│   ├── (admin)            # Admin routes
-│   ├── (vendor)           # Vendor routes
-│   ├── (user)             # User routes
-│   ├── api/               # API routes
-├── components/            # Reusable components
-├── config/                # App configuration
-├── contexts/              # React contexts
-├── features/              # Redux slices
-├── hooks/                 # Custom hooks
-├── lib/                   # Utility functions
-├── public/                # Static assets
-├── styles/                # Global styles
-└── types/                 # TypeScript types
-```
-
-## Implementing Real-Time Features
-
-### Stock Updates
-```javascript
-// Example using Firestore real-time listener
-import { onSnapshot, doc } from 'firebase/firestore';
-
-const unsubscribe = onSnapshot(doc(db, 'products', productId), (doc) => {
-  const stock = doc.data()?.stock;
-  dispatch(updateProductStock({ productId, stock }));
-});
-```
-
-### Order Tracking
-```javascript
-// Real-time order status updates
-useEffect(() => {
-  const orderRef = doc(db, 'orders', orderId);
-  const unsubscribe = onSnapshot(orderRef, (snapshot) => {
-    const status = snapshot.data()?.status;
-    setOrderStatus(status);
-  });
-  
-  return () => unsubscribe();
-}, [orderId]);
-```
-
-## Deployment
-
-1. **Set up Firebase project** in Firebase Console
-2. **Configure Stripe** in developer dashboard
-3. **Deploy to Vercel**:
+1. Clone repository:
    ```bash
-   vercel --prod
-   ```
-4. **Set up webhooks** for Stripe payments
+   git clone https://github.com/yourusername/ecommerce-platform.git
+   cd ecommerce-platform
+Install dependencies:
 
-## Contributing
+bash
+npm install
+Configure environment:
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+bash
+cp .env.example .env.local
+# Edit .env.local with your credentials
+Run development server:
 
-## License
+bash
+npm run dev
+Configuration
+Required environment variables (.env.local):
 
-[MIT](https://choosealicense.com/licenses/mit/)
+ini
+# Firebase
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
 
----
+# Stripe
+STRIPE_PUBLISHABLE_KEY=
+STRIPE_SECRET_KEY=
+Deployment
+Set up Firebase project in console
 
-**Note**: This is a simplified README for demonstration. A production README would include:
-- Detailed setup instructions
-- Testing guidelines
-- API documentation
-- Screenshots/GIFs
-- Contribution guidelines
-- License information
-```
+Configure Stripe account
+
+Deploy to Vercel:
+
+bash
+vercel --prod
+Project Structure
+ecommerce-platform/
+├── app/            # Next.js routes
+│   ├── (admin)     # Admin pages
+│   ├── (vendor)    # Vendor pages
+│   └── api/        # API endpoints
+├── components/     # UI components
+├── lib/            # Utilities and config
+└── store/          # Redux state
+License
+MIT License
+
