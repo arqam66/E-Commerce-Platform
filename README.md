@@ -1,31 +1,31 @@
-# E-Commerce Platform
+# 🛍️ E-Commerce Platform (Amazon Clone)
 
-A multi-vendor marketplace built with Next.js and Firebase.
+## 🚀 Features
+- **Role-Based Auth** (User/Admin/Vendor)
+- **Product Management** (CRUD Operations)
+- **Cart & Checkout** with Stripe/PayPal
+- **Reviews & Ratings** System
+- **Admin Dashboard** (Orders/Products/Vendors)
+- **Real-Time** Stock Updates
 
-## Features
-- **User Roles**: Customer, vendor, and admin.
-- **Product Management**: Full CRUD, categories, and search.
-- **Shopping**: Cart, checkout, and Stripe payments.
-- **Reviews**: Product ratings and feedback.
-- **Admin Dashboard**: Manage users, products, and orders.
-- **Real-Time Updates**: Inventory and order tracking.
+## 💻 Tech Stack
+| Frontend       | Backend    | State     | UI           | Payments  |
+|----------------|------------|-----------|--------------|-----------|
+| React 19       | Firebase   | Redux     | Tailwind CSS | Stripe    |
+| Next.js 14     | MongoDB    | Zustand   | ShadCN UI    | PayPal    |
 
-## Technologies
-- **Frontend**: Next.js 14, React 19, Tailwind CSS
-- **State**: Redux Toolkit
-- **Backend**: Firebase Authentication, Firestore
-- **Payment**: Stripe API
-- **Hosting**: Vercel
-
-## Quick Start
-
-### 1. Clone the repo
+## ⚙️ Installation
 ```bash
-git clone https://github.com/yourusername/ecommerce-platform.git
+git clone https://github.com/your-repo/ecommerce-platform.git
 cd ecommerce-platform
-
-2. Install dependencies
-bash
-Copy
-Edit
 npm install
+npm run dev
+🔧 Environment Variables
+env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_key
+NEXT_PUBLIC_STRIPE_PK=pk_test_123
+# ...other vars
+📜 License
+MIT © 2024 YourName
+
+
